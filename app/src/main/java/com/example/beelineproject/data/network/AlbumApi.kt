@@ -14,6 +14,6 @@ interface AlbumApi {
     @GET("/albums/{id}")
     fun getAlbumsById(@Path("id") id: Long): Single<AlbumDto>
 
-    @GET("/users/{id}/albums")
+    @GET("/users/{userId}/albums")
     fun getUserById(@Path("userId") userId: Long): Observable<List<AlbumDto>>
 }

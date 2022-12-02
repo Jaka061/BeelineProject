@@ -15,8 +15,8 @@ interface PhotosApi {
     @GET("/photos/{id}")
     fun getPhotosById(@Path("id") id:Long): Single<PhotosDto>
 
-    @GET("/albums/{id}/photos")
-    fun getByAlbumsId(@Path("userId") userId: Long): Observable<List<AlbumDto>>
+    @GET("/albums/{albumId}/photos")
+    fun getByAlbumsId(@Path("albumId") albumId: Long): Observable<List<AlbumDto>>
 
 }
 

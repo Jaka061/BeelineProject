@@ -1,6 +1,5 @@
 package com.example.beelineproject.presentation.ui
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import com.example.beelineproject.data.models.Photos
 import com.example.beelineproject.domain.use_case.GetPhotosByIdAlbumUseCase

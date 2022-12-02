@@ -1,14 +1,16 @@
 package com.example.beelineproject.presentation.ui
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.beelineproject.data.models.Users
 import com.example.beelineproject.databinding.FragmentAlbumBinding
 import com.example.beelineproject.presentation.OnClick
 import com.example.beelineproject.presentation.base.BaseFragment
@@ -22,11 +24,13 @@ class AlbumFragment: BaseFragment<AlbumVM,FragmentAlbumBinding>
     private lateinit var listener : OnClick
     private var _binding: FragmentAlbumBinding? = null
     private val binding get() = _binding!!
-    private lateinit var albumAdapter : AlbumAdapter
+    private var albumAdapter : AlbumAdapter = AlbumAdapter(this)
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        albumAdapter = AlbumAdapter(this)
+    private lateinit var adapterSp : ArrayAdapter<Users>
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        listener = context as OnClick
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,

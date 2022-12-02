@@ -18,23 +18,19 @@ open class BaseVM @Inject constructor() : ViewModel() {
     @Inject
     lateinit var resources: Resources
 
-
     protected val disposable by lazy {
         CompositeDisposable()
     }
-
     protected val _event by lazy {
         MutableLiveData<BaseEvent>()
     }
     val event: LiveData<BaseEvent>
     get() = _event
-
     protected val _errorMessage by lazy {
         MutableLiveData<String>()
     }
     val errorMessage: LiveData<String>
         get() = _errorMessage
-
     private val _isLoading by lazy {
         MutableLiveData(false)
     }
@@ -55,7 +51,6 @@ open class BaseVM @Inject constructor() : ViewModel() {
         super.onCleared()
 
     }
-
     protected open fun handleError(e: Throwable){
         _errorMessage.value = when(e){
             is HttpException -> e.message() ?: e.code().toString()

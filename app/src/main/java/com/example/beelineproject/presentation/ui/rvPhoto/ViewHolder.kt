@@ -23,7 +23,11 @@ class ViewHolder(private val binding: PhotoRecycleBinding) : RecyclerView.ViewHo
             val view = LayoutInflater.from(parent.context).inflate(R.layout.photo_recycle,parent,false)
 
             val binding = PhotoRecycleBinding.bind(view)
-            return ViewHolder(binding)
+            return ViewHolder(binding).apply {
+                itemView.setOnClickListener {
+                    listener.click(adapterPosition)
+                }
+            }
         }
     }
 
