@@ -12,7 +12,7 @@ class ViewHolder(private val binding: AlbumRecycleBinding) : RecyclerView.ViewHo
 
     fun bind(albums: Albums) {
         with(binding){
-            val url = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flaticon.com%2Ffree-icons%2Falbum&psig=AOvVaw2U9D_PCx_tgGCoDAJTcSXu&ust=1670045658093000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCID8pIOb2vsCFQAAAAAdAAAAABAQ"
+            val url = "https://cdn-icons-png.flaticon.com/512/3036/3036628.png"
             Glide.with(itemView.context).load(url).into(albumImg)
             albumTitle.text = albums.title
         }
