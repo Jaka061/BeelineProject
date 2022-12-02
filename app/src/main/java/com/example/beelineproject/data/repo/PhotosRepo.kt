@@ -24,13 +24,8 @@ class PhotosRepo @Inject constructor(private val photosApi : PhotosApi, private 
     fun savePhotosToDb(photos: List<Photos>) {
         photosDao.insertPhotos(photos)
     }
-    fun getPhotosById(id:Long): Single<Photos>{
-        return photosDao.getById(id)
-            .subscribeOn(Schedulers.io())
-    }
 
-    fun getByAlbumsId(albumId:Long): Single<Photos>{
-        return photosDao.getById(albumId)
-            .subscribeOn(Schedulers.io())
-    }
+//    fun getByAlbumsId(albumId:Long) : Single<Albums> {
+//        return photosDao.getAlbomId(albumId)
+//    }
 }

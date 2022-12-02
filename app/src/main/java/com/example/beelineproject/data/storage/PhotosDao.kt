@@ -5,6 +5,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.example.beelineproject.data.models.Albums
 import com.example.beelineproject.data.models.Photos
 import io.reactivex.Completable
 import io.reactivex.Single
@@ -23,4 +24,7 @@ interface PhotosDao {
 
     @Insert
     fun insert(photos: List<Photos>) : Completable
+
+//    @Query("SELECT * FROM Photos WHERE albumId = :albumId")
+//    fun getAlbomId(albumId : Long) : Single<Albums>
 }

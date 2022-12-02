@@ -24,4 +24,6 @@ interface AlbumsDao {
     @Query("SELECT * FROM Albums WHERE id = :id")
     fun getById(id: Long?): Single<Albums>
 
+    @Query("SELECT * FROM Albums WHERE userId = :userId")
+    fun getUserId(userId : Long) : Single<Albums>
 }

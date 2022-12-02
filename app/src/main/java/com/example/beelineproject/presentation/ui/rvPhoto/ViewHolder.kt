@@ -3,6 +3,7 @@ package com.example.beelineproject.presentation.ui.rvPhoto
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.beelineproject.R
 import com.example.beelineproject.data.models.Photos
 import com.example.beelineproject.databinding.PhotoRecycleBinding
@@ -11,7 +12,8 @@ class ViewHolder(private val binding: PhotoRecycleBinding) : RecyclerView.ViewHo
 
     fun bind(photos : Photos) {
         with(binding){
-           photoTitle.text = photos.title
+            Glide.with(itemView.context).load(photos.url).into(photoImg)
+            photoTitle.text = photos.title
         }
     }
 

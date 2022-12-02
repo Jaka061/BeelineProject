@@ -1,21 +1,18 @@
 package com.example.beelineproject.presentation.ui
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.beelineproject.R
 import com.example.beelineproject.databinding.FragmentAlbumBinding
-import com.example.beelineproject.databinding.FragmentMainBinding
 import com.example.beelineproject.presentation.OnClick
 import com.example.beelineproject.presentation.base.BaseFragment
 import com.example.beelineproject.presentation.ui.rvAlbum.AlbumAdapter
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -51,7 +48,7 @@ class AlbumFragment: BaseFragment<AlbumVM,FragmentAlbumBinding>
     private fun setupViews(){
         with(binding){
             albumRecycle.adapter = albumAdapter
-            val layoutManager = LinearLayoutManager(activity)
+            val layoutManager = GridLayoutManager(activity,2)
             albumRecycle.layoutManager = layoutManager
             albumRecycle.addItemDecoration(DividerItemDecoration(activity, RecyclerView.VERTICAL))
             Log.e("setU","ok")
@@ -72,9 +69,9 @@ class AlbumFragment: BaseFragment<AlbumVM,FragmentAlbumBinding>
     }
 
     override fun click(index: Int) {
-//        viewModel.getAlbums() {
-////            listener.openFragment(CommentListFragment.newInstance(it))
-////        }
+        viewModel.getAlbumIndex(index)?.let {
+            //listener.openFragment(PhotosFragment.)
+        }
     }
 
 }

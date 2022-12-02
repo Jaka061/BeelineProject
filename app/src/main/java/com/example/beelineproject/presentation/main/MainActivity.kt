@@ -9,7 +9,9 @@ import com.example.beelineproject.databinding.ActivityMainBinding
 import com.example.beelineproject.presentation.OnClick
 import com.example.beelineproject.presentation.ui.AlbumFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity(), OnClick {
     private lateinit var binding: ActivityMainBinding
     lateinit var clickView: BottomNavigationView
@@ -21,7 +23,7 @@ class MainActivity : AppCompatActivity(), OnClick {
 
         if(savedInstanceState == null){
             Log.e("main","ok")
-            openFragment(MainFragment(),false)
+            openFragment(AlbumFragment(),false)
         }
     }
 

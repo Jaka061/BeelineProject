@@ -3,6 +3,7 @@ package com.example.beelineproject.presentation.ui
 import android.util.Log
 import androidx.lifecycle.LiveData
 import com.example.beelineproject.data.models.Photos
+import com.example.beelineproject.domain.use_case.GetAlbumsUseCase
 import com.example.beelineproject.domain.use_case.GetPhotosLiveDataUseCase
 import com.example.beelineproject.domain.use_case.GetPhotosUseCase
 import com.example.beelineproject.presentation.base.BaseVM
@@ -13,7 +14,8 @@ import javax.inject.Inject
 @HiltViewModel
 class PhotosVM @Inject constructor(
     private val getPhotosLiveDataUseCase: GetPhotosLiveDataUseCase,
-    private val getPhotosUseCase: GetPhotosUseCase) : BaseVM(){
+    private val getPhotosUseCase: GetPhotosUseCase,
+    getAlbumsUseCase: GetAlbumsUseCase) : BaseVM(){
 
         val albums : LiveData<List<Photos>> = getPhotosLiveDataUseCase()
 
