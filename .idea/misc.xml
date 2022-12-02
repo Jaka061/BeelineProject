@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Files/BeelineProject/app/src/main/res/drawable-v24/btn.xml" value="0.1" />
+        <entry key="..\:/Files/BeelineProject/app/src/main/res/drawable-v24/ic_email.xml" value="0.1" />
+        <entry key="..\:/Files/BeelineProject/app/src/main/res/drawable-v24/ic_favorite.xml" value="0.1" />
+        <entry key="..\:/Files/BeelineProject/app/src/main/res/drawable-v24/ic_favorite_black.xml" value="0.1" />
+        <entry key="..\:/Files/BeelineProject/app/src/main/res/drawable-v24/ic_home.xml" value="0.1" />
+        <entry key="..\:/Files/BeelineProject/app/src/main/res/drawable-v24/ic_place_24.xml" value="0.1" />
+        <entry key="..\:/Files/BeelineProject/app/src/main/res/drawable-v24/ic_user.xml" value="0.1" />
+        <entry key="..\:/Files/BeelineProject/app/src/main/res/drawable-v24/ic_user_info.xml" value="0.1" />
+        <entry key="..\:/Files/BeelineProject/app/src/main/res/drawable/album.xml" value="0.25555555555555554" />
+        <entry key="..\:/Files/BeelineProject/app/src/main/res/drawable/ic_baseline_photo_size_select_actual_24.xml" value="0.25555555555555554" />
+        <entry key="..\:/Files/BeelineProject/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Files/BeelineProject/app/src/main/res/layout/album_recycle.xml" value="0.33" />
+        <entry key="..\:/Files/BeelineProject/app/src/main/res/layout/fragment_album.xml" value="0.1" />
+        <entry key="..\:/Files/BeelineProject/app/src/main/res/layout/fragment_main.xml" value="0.1" />
+        <entry key="..\:/Files/BeelineProject/app/src/main/res/layout/fragment_photos.xml" value="0.1" />
+        <entry key="..\:/Files/BeelineProject/app/src/main/res/layout/fragment_user_info.xml" value="0.22388059701492538" />
+        <entry key="..\:/Files/BeelineProject/app/src/main/res/layout/photo_recycle.xml" value="0.1" />
+        <entry key="..\:/Files/BeelineProject/app/src/main/res/layout/recycle.xml" value="0.1" />
+        <entry key="..\:/Files/BeelineProject/app/src/main/res/menu-v26/menu.xml" value="0.1" />
+        <entry key="..\:/Files/BeelineProject/app/src/main/res/menu/menu.xml" value="0.1" />
+        <entry key="..\:/Files/BeelineProject/app/src/main/res/mipmap-anydpi-v26/albums.xml" value="0.25555555555555554" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

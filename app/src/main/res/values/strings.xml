@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BeelineProject</string>
+    <string name="user">User</string>
+    <string name="home">Home</string>
+
+    <string name="timeout"> Превышено время ожидания.</string>
+    <string name="no_internet">Нет интернета</string>
+    <string name="unknown_exception">Непридвиденная ошибка</string>
+</resources>
