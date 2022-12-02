@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.beelineproject.databinding.FragmentAlbumBinding
@@ -50,7 +51,7 @@ class PhotosFragment : BaseFragment<PhotosVM, FragmentPhotosBinding>
     private fun setupViews() {
         with(binding) {
             photoRecycle.adapter  = photAdapter
-            val layoutManager = LinearLayoutManager(activity)
+            val layoutManager =  GridLayoutManager(activity,3)
             photoRecycle.layoutManager = layoutManager
             photoRecycle.addItemDecoration(
                 DividerItemDecoration(

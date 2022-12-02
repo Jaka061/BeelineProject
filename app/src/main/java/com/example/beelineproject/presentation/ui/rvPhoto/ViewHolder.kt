@@ -12,7 +12,8 @@ class ViewHolder(private val binding: PhotoRecycleBinding) : RecyclerView.ViewHo
 
     fun bind(photos : Photos) {
         with(binding){
-            Glide.with(itemView.context).load(photos.url).into(photoImg)
+            val url = photos.url
+            Glide.with(itemView.context).load(url).into(photoImg)
             photoTitle.text = photos.title
         }
     }
@@ -22,11 +23,7 @@ class ViewHolder(private val binding: PhotoRecycleBinding) : RecyclerView.ViewHo
             val view = LayoutInflater.from(parent.context).inflate(R.layout.photo_recycle,parent,false)
 
             val binding = PhotoRecycleBinding.bind(view)
-            return ViewHolder(binding).apply {
-                itemView.setOnClickListener {
-                    listener.click(adapterPosition)
-                }
-            }
+            return ViewHolder(binding)
         }
     }
 
