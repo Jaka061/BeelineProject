@@ -37,7 +37,6 @@ class AlbumVM @Inject constructor(
         )
     }
 
-
     fun getAlbumIndex(index: Int): Albums? {
         return albums.value?.get(index)
     }

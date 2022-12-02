@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,11 +24,15 @@ class PhotosFragment : BaseFragment<PhotosVM, FragmentPhotosBinding>
 
     private var _binding: FragmentPhotosBinding? = null
     private val binding get() = _binding!!
-    private lateinit var photAdapter: PhotosAdapter
+    private lateinit var photoAdapter: PhotosAdapter
+    private lateinit var photoVM: PhotosVM
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        photAdapter = PhotosAdapter(this)
+        photoAdapter = PhotosAdapter(this)
+        photoVM = ViewModelProvider(this)[PhotosVM::class.java]
+        photoVM.setId(arguments?.getLong(Long::class.java.canonicalName))
+        photoVM.fetchCh()
     }
 
     override fun onCreateView(
@@ -40,7 +45,7 @@ class PhotosFragment : BaseFragment<PhotosVM, FragmentPhotosBinding>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Log.e("VCreate", "ok")
+        Log.e("VCreate P", "ok")
 
         binding.apply {
         }
@@ -50,7 +55,7 @@ class PhotosFragment : BaseFragment<PhotosVM, FragmentPhotosBinding>
 
     private fun setupViews() {
         with(binding) {
-            photoRecycle.adapter  = photAdapter
+            photoRecycle.adapter  = photoAdapter
             val layoutManager =  GridLayoutManager(activity,3)
             photoRecycle.layoutManager = layoutManager
             photoRecycle.addItemDecoration(
@@ -59,21 +64,21 @@ class PhotosFragment : BaseFragment<PhotosVM, FragmentPhotosBinding>
                     RecyclerView.VERTICAL
                 )
             )
-            }
+        }
     }
 
     private fun subscribeToLiveData() {
-        viewModel.albums.observe(viewLifecycleOwner) {
-            photAdapter.setData(it)
-            Log.e("sub", "ok")
+        viewModel.albums.observe(viewLifecycleOwner){
+            photoAdapter.setData(it)
+            Log.e("sub P", "ok")
         }
     }
 
     companion object{
-//        fun newInstance(albumId: Long): PhotosFragment {
-//            val argum = Bundle().apply { putLong(Long::class.java.canonicalName, albumId) }
-//            return DetailsFragment().apply { arguments = argum }
-//        }
+        fun newInstance(albumId: Long): PhotosFragment {
+            val argum = Bundle().apply { putLong(Long::class.java.canonicalName, albumId) }
+            return PhotosFragment().apply { arguments = argum }
+        }
     }
 
     override fun onDestroyView() {

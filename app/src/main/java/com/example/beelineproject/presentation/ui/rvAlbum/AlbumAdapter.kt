@@ -11,7 +11,7 @@ class AlbumAdapter(private val listener : Listener): RecyclerView.Adapter<ViewHo
     fun setData(list: List<Albums>) {
         this.list = list
         notifyDataSetChanged()
-        Log.e("id","adapter OK")
+        Log.e("id","adapterAlbum OK")
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

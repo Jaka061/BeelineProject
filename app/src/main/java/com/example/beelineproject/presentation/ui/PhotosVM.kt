@@ -3,42 +3,44 @@ package com.example.beelineproject.presentation.ui
 import android.util.Log
 import androidx.lifecycle.LiveData
 import com.example.beelineproject.data.models.Photos
-import com.example.beelineproject.domain.use_case.GetAlbumsUseCase
+import com.example.beelineproject.domain.use_case.GetPhotosByIdAlbumUseCase
 import com.example.beelineproject.domain.use_case.GetPhotosLiveDataUseCase
 import com.example.beelineproject.domain.use_case.GetPhotosUseCase
 import com.example.beelineproject.presentation.base.BaseVM
 import com.example.beelineproject.presentation.base.Event
 import dagger.hilt.android.lifecycle.HiltViewModel
+import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Inject
 
 @HiltViewModel
 class PhotosVM @Inject constructor(
     private val getPhotosLiveDataUseCase: GetPhotosLiveDataUseCase,
     private val getPhotosUseCase: GetPhotosUseCase,
-    getAlbumsUseCase: GetAlbumsUseCase) : BaseVM(){
+    private val getPhotosByIdAlbumUseCase : GetPhotosByIdAlbumUseCase) : BaseVM() {
 
-        val albums : LiveData<List<Photos>> = getPhotosLiveDataUseCase()
+    private val compositeDisposable: CompositeDisposable = CompositeDisposable()
+    val albums: LiveData<List<Photos>> = getPhotosLiveDataUseCase()
 
-        init {
-            getPhotos()
-        }
 
-        fun getPhotos() {
-            _event.value = Event.ShowLoading
-            disposable.add(
-                getPhotosUseCase()
-                    .doOnTerminate {
-                        _event.value = Event.StopLoading
-                    }
-                    .subscribe({
-                        Log.d("photo VM","success")
+    private  var albumId: Long = -1
+    fun setId(albumId: Long?){
+        this.albumId= albumId?: -1
+    }
+
+    fun fetchCh(){
+        getPhotosByIdAlbumUseCase(albumId)?.let {
+            compositeDisposable.add(
+                it.subscribe({
+                        _event.value = Event.PhotosFetched(it)
                     },{
-                        handleError(it)
+
                     })
             )
         }
     }
 
-    private fun Any?.getOrElse(index: String): String {
-        return index
+    override fun onCleared() {
+        super.onCleared()
+        compositeDisposable.clear()
     }
+}

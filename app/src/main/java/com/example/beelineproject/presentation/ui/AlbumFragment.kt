@@ -57,7 +57,7 @@ class AlbumFragment: BaseFragment<AlbumVM,FragmentAlbumBinding>
     private fun subscribeToLiveData() {
         viewModel.albums.observe(viewLifecycleOwner) {
             albumAdapter.setData(it)
-            Log.e("sub","ok")
+            Log.e("sub Al","ok")
         }
     }
 
@@ -70,7 +70,8 @@ class AlbumFragment: BaseFragment<AlbumVM,FragmentAlbumBinding>
 
     override fun click(index: Int) {
         viewModel.getAlbumIndex(index)?.let {
-            //listener.openFragment(PhotosFragment.)
+            Log.e("open","Photos OK")
+            listener.openFragment(PhotosFragment.newInstance(it.id))
         }
     }
 

@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity(), OnClick {
 
         if(savedInstanceState == null){
             Log.e("main","ok")
-            openFragment(PhotosFragment(),false)
+            openFragment(AlbumFragment(),false)
         }
     }
 

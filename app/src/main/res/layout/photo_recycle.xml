@@ -5,12 +5,13 @@
     android:layout_width="100dp"
     android:layout_height="120dp"
     android:layout_marginVertical="10dp"
-    android:layout_marginHorizontal="10dp"
+    android:layout_marginHorizontal="5dp"
     app:cardCornerRadius="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="140dp"
+        android:background="@drawable/back"
         android:paddingEnd="10dp"
         android:paddingStart="10dp"
         >
