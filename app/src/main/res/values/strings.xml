@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">BeelinePr</string>
-    <string name="rabbit">Зайчик</string>
-    <string name="smile">Смайл</string>
-    <string name="star">Звезда</string>
+-
+    <string name="edit_email">Edit email</string>
+    <string name="edit_text">Edit text(message)</string>
+    <string name="send">Send</string>
+    <string name="text1">Кому :</string>
+    <string name="txt">- Письмо -</string>
+    <string name="title">Edit title(subject)</string>
 </resources>

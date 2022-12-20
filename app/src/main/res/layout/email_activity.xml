@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7B8844E"
+    tools:context=".EmailActivity">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/txtTitle"
+        app:layout_constraintVertical_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/eEmail"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/email"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        style="@style/txtEmail"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/eEmail"
+        app:layout_constraintTop_toBottomOf="@id/txt"
+        app:layout_constraintBottom_toTopOf="@id/eTitle" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/eEmail"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/edit_email"
+        style="@style/TextEdit"
+        app:layout_constraintBottom_toTopOf="@id/eTitle"
+        app:layout_constraintLeft_toRightOf="@id/email"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt"
+        tools:ignore="TextContrastCheck" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/eTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/title"
+        style="@style/TextEdit"
+        app:layout_constraintBottom_toTopOf="@+id/eText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eEmail" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/eText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edit_text"
+        style="@style/TextEdit"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eTitle"
+        tools:ignore="TextContrastCheck" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:text="Send"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eText"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
                     1 -> startActivity2()
                     2 -> startActivity3()
                     3 -> startActivity4()
+                    4 -> startActivity5()
                 }
             }
 
@@ -39,6 +40,7 @@ class MainActivity : AppCompatActivity() {
               list.add("Activity ${i+1}")
           }
             list.add("Activity Lab 4(2)")
+          list.add("Email")
           adapter.setData(list)
      }
 
@@ -60,6 +62,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun startActivity4() {
         val intent = Intent(this, MainActivity1::class.java)
+        startActivity(intent)
+    }
+
+    private fun startActivity5() {
+        val intent = Intent(this, EmailActivity::class.java)
         startActivity(intent)
     }
 }
